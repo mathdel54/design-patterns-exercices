@@ -22,4 +22,21 @@ class VehiculeFactory
     {
         return new Truck($cost, $fueltype);
     }
+
+    public static function getVehiculeByDistanceAndWeight($distance, $weight)
+    {
+        if ($weight > 200 && $distance >= 20) {
+            return self::makeTruck(4, "diesel");
+        }
+        
+        if ($weight > 20 && $distance >= 20) {
+            return self::makeCar(1.5, "essence");
+        }
+        
+        if ($distance <= 20) {
+            return self::makeBicycle(0, "none");
+        }
+        
+        return self::makeCar(1.5, "essence");
+    }
 }

@@ -19,4 +19,10 @@ echo $truck->getFuelType() . "<br>";
 $car = VehiculeFactory::makeCar(1.89,'Essence');
 
 echo $car->getCostPerKm();
-echo $car->getFuelType();
+echo $car->getFuelType() . "<br>";
+
+$vehicule = VehiculeFactory::getVehiculeByDistanceAndWeight(47,256);
+
+echo $vehicule::class . "<br>";
+echo $vehicule->getCostPerKm() . "<br>";
+echo $vehicule->getFuelType();
